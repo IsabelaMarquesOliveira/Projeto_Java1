@@ -28,5 +28,8 @@ Retira um volume (em litros) de dentro da geladeira.
 * **Regra 1:** Não aceita valores negativos ou zero.
 * **Regra 2:** Verifica se há volume suficiente guardado para ser retirado. Se tentar tirar mais do que tem, a ação é bloqueada.
 
+
+<img width="437" height="324" alt="{160B3002-0C10-4386-AA69-5A8C496D4F78}" src="https://github.com/user-attachments/assets/073352d4-464b-45e1-8255-ac3d63c7bb36" />
+
 ---
 *Projeto desenvolvido como parte dos estudos de Java.*
