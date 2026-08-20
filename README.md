@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Projeto: Controle de Eletrodomésticos (Geladeira) ❄️
 
 Este projeto é uma aplicação feita em Java para praticar os conceitos fundamentais de **Programação Orientada a Objetos (POO)**, com foco em classes, atributos, métodos e proteção do estado (regras de negócio).
@@ -67,4 +66,3 @@ Retira um volume (em litros) de dentro da geladeira.
 
 ---
 *Projeto desenvolvido como parte dos estudos de Java.*
->>>>>>> af2e2fe2ab88b0c048ff9433f43b3527956a7e54
