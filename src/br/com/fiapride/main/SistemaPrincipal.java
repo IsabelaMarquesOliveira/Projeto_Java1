@@ -1,34 +1,29 @@
 package br.com.fiapride.main;
 
-// Importamos a classe Geladeira para que o sistema a reconheça
 import br.com.fiapride.model.Geladeira;
 
 public class SistemaPrincipal {
-
     public static void main(String[] args) {
-        // INSTANCIAÇÃO
-        // O comando 'new' aloca memória para um novo objeto.
 
-        // Criando a primeira geladeira (Objeto 1)
-        // Passamos a Marca e a Capacidade Total em Litros no construtor
+        // Criando a primeira geladeira
         Geladeira geladeira1 = new Geladeira("Brastemp", 400);
-        System.out.println("Guardando alimentos na geladeira 1");
-        geladeira1.guardarAlimento(50); // Guardando 50 litros de volume
+        System.out.println("Adicionando itens na geladeira 1");
+        // O método agora se chama adicionarItens (igual ao seu Astah)
+        geladeira1.adicionarItens(50);
 
-        // Criando a segunda geladeira (Objeto 2)
+        // Criando a segunda geladeira
         Geladeira geladeira2 = new Geladeira("Electrolux", 300);
-        System.out.println("Guardando alimentos na geladeira 2");
-        geladeira2.guardarAlimento(12); // Guardando 12 litros de volume
+        System.out.println("Adicionando itens na geladeira 2");
+        geladeira2.adicionarItens(12);
 
         System.out.println("\n--- Sistema de Controle de Eletrodomésticos ---");
-        System.out.println("Geladeira: " + geladeira1.marca + " | Ocupação: " + geladeira1.ocupacaoAtual + "L | Capacidade: " + geladeira1.capacidadeEmLitros + "L");
-        System.out.println("Geladeira: " + geladeira2.marca + " | Ocupação: " + geladeira2.ocupacaoAtual + "L | Capacidade: " + geladeira2.capacidadeEmLitros + "L\n");
 
-        System.out.println("Retirando alimentos da geladeira 1");
-        geladeira1.retirarAlimento(20); // Vai funcionar, pois tem 50L guardados
+        // OLHA A MÁGICA AQUI: Em vez de geladeira1.marca, usamos geladeira1.getMarca()
+        System.out.println("Geladeira: " + geladeira1.getMarca() + " | Ocupação: " + geladeira1.getCapacidadeAtual() + " | Máx: " + geladeira1.getCapacidadeMaxima());
+        System.out.println("Geladeira: " + geladeira2.getMarca() + " | Ocupação: " + geladeira2.getCapacidadeAtual() + " | Máx: " + geladeira2.getCapacidadeMaxima() + "\n");
 
-        System.out.println("Retirando alimentos da geladeira 2");
-        geladeira2.retirarAlimento(20);
+        System.out.println("Ajustando a temperatura da geladeira 1");
+        geladeira1.ajustarTemperatura(5);
     }
 }
 
