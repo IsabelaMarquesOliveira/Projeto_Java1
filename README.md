@@ -30,8 +30,6 @@ Nesta etapa, a arquitetura do projeto foi atualizada para aplicar o conceito de 
 * `capacidadeAtual` (int)
 * `capacidadeMaxima` (int)
 
----
-*Projeto acadêmico desenvolvido em Java para o estudo de Programação Orientada a Objetos.*
 
 
 
