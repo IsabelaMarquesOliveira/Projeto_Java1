@@ -1,28 +1,21 @@
 package br.com.fiapride.model;
 
 public class Geladeira {
-    // 1. Atributos Privados (O sinal de "-" no seu Astah)
     private String marca;
     private int temperaturaAtual;
     private int capacidadeAtual;
     private int capacidadeMaxima;
 
-    // Construtor
+    // Construtor da Aula 04 (Exigindo dados essenciais)
     public Geladeira(String marca, int capacidadeMaxima) {
-        this.marca = marca;
-        this.capacidadeMaxima = capacidadeMaxima;
-        this.temperaturaAtual = 4; // Temperatura padrão
-        this.capacidadeAtual = 0;  // Começa vazia
+        this.setMarca(marca);
+        this.setCapacidadeMaxima(capacidadeMaxima);
+        this.setTemperaturaAtual(4); // Temperatura inicial de fábrica
+        this.setCapacidadeAtual(0);  // Começa vazia
     }
 
-    // 2. Seus métodos originais de ação
     public void ajustarTemperatura(int novaTemperatura) {
-        if (novaTemperatura >= -5 && novaTemperatura <= 10) {
-            this.temperaturaAtual = novaTemperatura;
-            System.out.println("Sucesso! A temperatura foi ajustada para " + novaTemperatura + "°C.");
-        } else {
-            System.out.println("ERRO: Escolha um valor entre -5°C e 10°C.");
-        }
+        this.setTemperaturaAtual(novaTemperatura);
     }
 
     public void adicionarItens(int quantidade) {
@@ -36,10 +29,6 @@ public class Geladeira {
         }
     }
 
-    // ---------------------------------------------------------
-    // 3. MÉTODOS GET E SET (Missão da Aula 03)
-    // ---------------------------------------------------------
-
     public String getMarca() {
         return marca;
     }
@@ -52,7 +41,7 @@ public class Geladeira {
         return temperaturaAtual;
     }
 
-    // REGRA ESPECIAL DA MISSÃO: Protegendo o SET da temperatura
+    // Regra de segurança blindada no SET
     public void setTemperaturaAtual(int temperaturaAtual) {
         if (temperaturaAtual >= -5 && temperaturaAtual <= 10) {
             this.temperaturaAtual = temperaturaAtual;

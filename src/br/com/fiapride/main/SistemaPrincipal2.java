@@ -5,20 +5,18 @@ import br.com.fiapride.model.Geladeira;
 public class SistemaPrincipal2 {
     public static void main(String[] args) {
 
-        // Instanciando nossa geladeira
-        Geladeira minhaGeladeira = new Geladeira("Brastemp", 100);
+        // 4. Instanciação corrigida, injetando os argumentos exigidos pelo construtor
+        Geladeira minhaGeladeira = new Geladeira("Brastemp", 400);
 
-        System.out.println("--- Teste de Encapsulamento ---");
-        System.out.println("Marca: " + minhaGeladeira.getMarca());
-        System.out.println("Temperatura inicial: " + minhaGeladeira.getTemperaturaAtual() + "°C\n");
+        System.out.println("--- Validação de Instanciação e Construtor ---");
+        System.out.println("Equipamento: " + minhaGeladeira.getMarca());
+        System.out.println("Capacidade Máxima Operacional: " + minhaGeladeira.getCapacidadeMaxima() + "L");
+        System.out.println("Temperatura inicial de fábrica: " + minhaGeladeira.getTemperaturaAtual() + "°C\n");
 
-        // TENTATIVA DE BURLAR O SISTEMA (Missão 03)
-        System.out.println(">> Tentando forçar a temperatura para -50°C pelo método SET:");
-
-        // ATENÇÃO: Passando um número inteiro (-50) para bater com o tipo 'int' do Astah
+        System.out.println(">> Tentativa de ajuste térmico fora dos parâmetros (-50°C):");
         minhaGeladeira.setTemperaturaAtual(-50);
 
-        System.out.println("\n>> Resultado:");
-        System.out.println("A temperatura real da geladeira continua segura em: " + minhaGeladeira.getTemperaturaAtual() + "°C");
+        System.out.println("\nEstado térmico protegido mantido em: " + minhaGeladeira.getTemperaturaAtual() + "°C");
     }
 }
+

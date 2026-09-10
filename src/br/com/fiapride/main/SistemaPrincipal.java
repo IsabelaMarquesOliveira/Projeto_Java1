@@ -18,7 +18,7 @@ public class SistemaPrincipal {
 
         System.out.println("\n--- Sistema de Controle de Eletrodomésticos ---");
 
-        // OLHA A MÁGICA AQUI: Em vez de geladeira1.marca, usamos geladeira1.getMarca()
+
         System.out.println("Geladeira: " + geladeira1.getMarca() + " | Ocupação: " + geladeira1.getCapacidadeAtual() + " | Máx: " + geladeira1.getCapacidadeMaxima());
         System.out.println("Geladeira: " + geladeira2.getMarca() + " | Ocupação: " + geladeira2.getCapacidadeAtual() + " | Máx: " + geladeira2.getCapacidadeMaxima() + "\n");
 
