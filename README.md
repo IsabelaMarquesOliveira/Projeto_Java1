@@ -15,3 +15,10 @@ Clique nos links abaixo para ver os detalhes e conceitos aplicados em cada etapa
 * 🔒 **[Aula 03: Encapsulamento e Proteção de Dados](AULA_03.md)** (Getters, Setters e visibilidade Private)
 * 🏗️ **[Aula 04: Construtores e Estado Inicial](AULA_04.md)** (Obrigatoriedade de atributos na instanciação)
 * 🔌 **[Aula 05: Associação de Objetos](AULA_05.md)** (Conectando a classe Geladeira com a classe Sensor)
+
+<img width="400" height="276" alt="{81D01129-BDDD-4FB3-B754-51EDDB6BB0CE}" src="https://github.com/user-attachments/assets/4827cdd7-9937-4b0f-99f1-6728b6c61470" />
+
+
+---
+*Projeto acadêmico desenvolvido em Java para o estudo de Programação Orientada a Objetos.*
+
