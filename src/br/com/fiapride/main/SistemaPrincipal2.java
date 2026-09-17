@@ -1,22 +1,27 @@
 package br.com.fiapride.main;
 
 import br.com.fiapride.model.Geladeira;
+import br.com.fiapride.model.Sensor; // Não esqueça de importar a classe nova!
 
 public class SistemaPrincipal2 {
     public static void main(String[] args) {
 
-        // 4. Instanciação corrigida, injetando os argumentos exigidos pelo construtor
-        Geladeira minhaGeladeira = new Geladeira("Brastemp", 400);
+        // 1º Passo: Criar o objeto associado primeiro (um sensor térmico comum)
+        Sensor sensorTermico = new Sensor("DHT22", true);
 
-        System.out.println("--- Validação de Instanciação e Construtor ---");
+        // 2º Passo: Criar a Geladeira injetando o sensor dentro do construtor
+        Geladeira minhaGeladeira = new Geladeira("Brastemp", 400, sensorTermico);
+
+        System.out.println("--- Teste de Associação de Objetos ---");
         System.out.println("Equipamento: " + minhaGeladeira.getMarca());
-        System.out.println("Capacidade Máxima Operacional: " + minhaGeladeira.getCapacidadeMaxima() + "L");
-        System.out.println("Temperatura inicial de fábrica: " + minhaGeladeira.getTemperaturaAtual() + "°C\n");
 
-        System.out.println(">> Tentativa de ajuste térmico fora dos parâmetros (-50°C):");
-        minhaGeladeira.setTemperaturaAtual(-50);
+        // 4. Imprimindo um dado do objeto associado!
+        // Olha a mágica: entramos na geladeira -> pegamos o sensor -> perguntamos o modelo dele
+        System.out.println("Modelo do Sensor Termômetro: " + minhaGeladeira.getSensorInterno().getModelo());
 
-        System.out.println("\nEstado térmico protegido mantido em: " + minhaGeladeira.getTemperaturaAtual() + "°C");
+        if(minhaGeladeira.getSensorInterno().isAtivo()) {
+            System.out.println("Status: O sensor interno está LIGADO e monitorando.");
+        }
     }
 }
 

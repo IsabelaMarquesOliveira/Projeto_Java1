@@ -3,49 +3,15 @@
 Este projeto é uma aplicação desenvolvida em Java com o objetivo de praticar os conceitos fundamentais de **Programação Orientada a Objetos (POO)**.
 
 ## 🌍 O Objeto no Mundo Real
-A classe principal deste projeto representa uma **Geladeira**. Assim como no mundo real, o eletrodoméstico possui características físicas (marca e capacidade máxima) e um espaço interno limitado. O sistema implementa regras de negócio rigorosas para garantir que o estado do objeto permaneça consistente, impossibilitando, por exemplo, o armazenamento acima de sua capacidade física.
+A classe principal deste projeto representa uma **Geladeira**. Assim como no mundo real, o eletrodoméstico possui características físicas e um espaço interno limitado. O sistema implementa regras de negócio rigorosas para garantir que o estado do objeto permaneça consistente.
 
 ---
 
-## ⚙️ Aula 02: Comportamentos e Regras de Negócio
-Nesta etapa, foram implementados os primeiros métodos de ação do objeto, estabelecendo regras de negócio fundamentais por meio de estruturas condicionais (`if/else`):
+## 📚 Índice de Aulas e Evolução do Projeto
 
-* **`adicionarItens(int quantidade)`:** Método responsável por gerenciar o volume interno. Possui validações para impedir a inserção de valores negativos ou zerados, e bloqueia a ação caso a quantidade informada ultrapasse o limite da `capacidadeMaxima`.
-* **`ajustarTemperatura(int novaTemperatura)`:** Método de controle térmico que implementa uma trava de segurança, permitindo ajustes operacionais apenas no intervalo funcional estabelecido pela regra de negócios.
+Clique nos links abaixo para ver os detalhes e conceitos aplicados em cada etapa do projeto:
 
----
-
-## 🔒 Aula 03: Encapsulamento e Proteção de Dados
-Nesta etapa, a arquitetura do projeto foi atualizada para aplicar o conceito de **Encapsulamento**, garantindo a segurança e a integridade dos dados:
-
-* Todos os atributos da classe foram convertidos para a visibilidade `private`, impedindo alterações diretas no estado do objeto por agentes externos.
-* Foram implementados os métodos de acesso padrão (`Getters` para leitura e `Setters` para escrita).
-
-**Regra Especial de Segurança (Setter):**
-* **`setTemperaturaAtual(int temperaturaAtual)`:** Este método tornou-se a única interface validada para alteração térmica. A regra de negócio foi migrada para este *Setter*, bloqueando qualquer tentativa de burlar o sistema com valores menores que -5°C ou maiores que 10°C.
-
-**Estrutura de Atributos Privados:**
-* `marca` (String)
-* `temperaturaAtual` (int)
-* `capacidadeAtual` (int)
-* `capacidadeMaxima` (int)
-
----
-
-## 🏗️ Aula 04: Construtores e Estado Inicial
-Nesta etapa, a arquitetura da classe foi aprimorada com a implementação de um **Construtor** personalizado. O objetivo principal é garantir que nenhum objeto seja instanciado em um estado inválido ou incompleto.
-
-* **Instanciação Segura (Obrigatoriedade):** O construtor foi configurado para exigir a passagem obrigatória dos atributos essenciais (`marca` e `capacidadeMaxima`) no exato momento em que o objeto é criado na memória (utilizando o comando `new`).
-* **Validação no Nascimento:** Uma excelente prática de engenharia de software foi aplicada: as atribuições dentro do construtor são realizadas através da chamada dos métodos `Setters` (ex: `this.setMarca(...)`). Isso garante que as regras de segurança e encapsulamento blindem o objeto desde a sua inicialização.
-* **Estado Padrão de Fábrica:** Atributos operacionais, como `temperaturaAtual` e `capacidadeAtual`, são inicializados automaticamente de forma estruturada com valores seguros predefinidos (ex: 4°C e ocupação zero).
-
-
-
-
-
-<img width="186" height="115" alt="{45B8D1B6-BC4C-4021-9BBC-0610BD5071C4}" src="https://github.com/user-attachments/assets/3deee6a7-727d-4dab-885c-2a98fa21293c" />
-<img width="400" height="276" alt="{81D01129-BDDD-4FB3-B754-51EDDB6BB0CE}" src="https://github.com/user-attachments/assets/4827cdd7-9937-4b0f-99f1-6728b6c61470" />
-
-
----
-*Projeto acadêmico desenvolvido em Java para o estudo de Programação Orientada a Objetos.*
+* 📖 **[Aula 02: Comportamentos e Regras de Negócio](AULA_02.md)** (Uso de if/else e métodos)
+* 🔒 **[Aula 03: Encapsulamento e Proteção de Dados](AULA_03.md)** (Getters, Setters e visibilidade Private)
+* 🏗️ **[Aula 04: Construtores e Estado Inicial](AULA_04.md)** (Obrigatoriedade de atributos na instanciação)
+* 🔌 **[Aula 05: Associação de Objetos](AULA_05.md)** (Conectando a classe Geladeira com a classe Sensor)

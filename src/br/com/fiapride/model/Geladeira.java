@@ -6,14 +6,20 @@ public class Geladeira {
     private int capacidadeAtual;
     private int capacidadeMaxima;
 
-    // Construtor da Aula 04 (Exigindo dados essenciais)
-    public Geladeira(String marca, int capacidadeMaxima) {
+    // Associação com a nova classe Sensor
+    private Sensor sensorInterno;
+
+    // Construtor atualizado recebendo o Sensor
+    public Geladeira(String marca, int capacidadeMaxima, Sensor sensorInterno) {
         this.setMarca(marca);
         this.setCapacidadeMaxima(capacidadeMaxima);
-        this.setTemperaturaAtual(4); // Temperatura inicial de fábrica
-        this.setCapacidadeAtual(0);  // Começa vazia
+        this.setSensorInterno(sensorInterno);
+
+        this.setTemperaturaAtual(4);
+        this.setCapacidadeAtual(0);
     }
 
+    // Métodos de Ação
     public void ajustarTemperatura(int novaTemperatura) {
         this.setTemperaturaAtual(novaTemperatura);
     }
@@ -29,6 +35,7 @@ public class Geladeira {
         }
     }
 
+    // Getters e Setters
     public String getMarca() {
         return marca;
     }
@@ -41,7 +48,6 @@ public class Geladeira {
         return temperaturaAtual;
     }
 
-    // Regra de segurança blindada no SET
     public void setTemperaturaAtual(int temperaturaAtual) {
         if (temperaturaAtual >= -5 && temperaturaAtual <= 10) {
             this.temperaturaAtual = temperaturaAtual;
@@ -64,5 +70,13 @@ public class Geladeira {
 
     public void setCapacidadeMaxima(int capacidadeMaxima) {
         this.capacidadeMaxima = capacidadeMaxima;
+    }
+
+    public Sensor getSensorInterno() {
+        return sensorInterno;
+    }
+
+    public void setSensorInterno(Sensor sensorInterno) {
+        this.sensorInterno = sensorInterno;
     }
 }
