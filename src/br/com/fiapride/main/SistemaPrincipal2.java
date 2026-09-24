@@ -1,27 +1,35 @@
 package br.com.fiapride.main;
 
-import br.com.fiapride.model.Geladeira;
-import br.com.fiapride.model.Sensor; // Não esqueça de importar a classe nova!
+import br.com.fiapride.model.Frigobar;
+import br.com.fiapride.model.GeladeiraInteligente;
+import br.com.fiapride.model.Sensor;
 
 public class SistemaPrincipal2 {
     public static void main(String[] args) {
 
-        // 1º Passo: Criar o objeto associado primeiro (um sensor térmico comum)
-        Sensor sensorTermico = new Sensor("DHT22", true);
+        Sensor sensorComum = new Sensor("Termostato Simples", true);
+        Sensor sensorSmart = new Sensor("Sensor Digital Wi-Fi", true);
 
-        // 2º Passo: Criar a Geladeira injetando o sensor dentro do construtor
-        Geladeira minhaGeladeira = new Geladeira("Brastemp", 400, sensorTermico);
+        // Criando a primeira filha (Frigobar)
+        Frigobar meuFrigobar = new Frigobar("Consul", 120, sensorComum, true);
 
-        System.out.println("--- Teste de Associação de Objetos ---");
-        System.out.println("Equipamento: " + minhaGeladeira.getMarca());
+        // Criando a segunda filha (Geladeira Inteligente)
+        GeladeiraInteligente minhaSmart = new GeladeiraInteligente("Samsung", 500, sensorSmart, true);
 
-        // 4. Imprimindo um dado do objeto associado!
-        // Olha a mágica: entramos na geladeira -> pegamos o sensor -> perguntamos o modelo dele
-        System.out.println("Modelo do Sensor Termômetro: " + minhaGeladeira.getSensorInterno().getModelo());
+        System.out.println("--- Testando os Herdeiros ---");
 
-        if(minhaGeladeira.getSensorInterno().isAtivo()) {
-            System.out.println("Status: O sensor interno está LIGADO e monitorando.");
-        }
+        // Repare que estamos usando o getMarca(), que foi herdado da Geladeira!
+        System.out.println("1. Frigobar da marca: " + meuFrigobar.getMarca());
+        System.out.println("   Tem fechadura? " + (meuFrigobar.isTemFechadura() ? "Sim" : "Não"));
+
+        System.out.println("\n2. Geladeira Smart da marca: " + minhaSmart.getMarca());
+        System.out.println("   Está conectada no Wi-Fi? " + (minhaSmart.isConexaoWiFi() ? "Sim" : "Não"));
+
+        // Provando a herança de métodos de ação da mãe
+        System.out.println("\n--- Testando métodos herdados na Smart ---");
+        minhaSmart.ajustarTemperatura(2);
+        System.out.println("Temperatura da Smart ajustada para: " + minhaSmart.getTemperaturaAtual() + "°C");
+        minhaSmart.adicionarItens(10);
     }
 }
 
