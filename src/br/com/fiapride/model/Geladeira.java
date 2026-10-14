@@ -79,4 +79,10 @@ public class Geladeira {
     public void setSensorInterno(Sensor sensorInterno) {
         this.sensorInterno = sensorInterno;
     }
+
+    // 1. Método genérico na Superclasse
+    public double calcularConsumoEnergia() {
+        System.out.println("Calculando consumo médio de uma Geladeira padrão...");
+        return 50.0; // Consumo base em kWh
+    }
 }

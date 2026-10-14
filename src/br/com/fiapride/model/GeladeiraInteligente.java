@@ -19,4 +19,11 @@ public class GeladeiraInteligente extends Geladeira {
     public void setConexaoWiFi(boolean conexaoWiFi) {
         this.conexaoWiFi = conexaoWiFi;
     }
+
+    // 2 e 3. Sobrescrevendo o método com a regra da Smart (consome mais)
+    @Override
+    public double calcularConsumoEnergia() {
+        System.out.println("Calculando consumo elevado da Geladeira Smart (Wi-Fi e telas ativas)...");
+        return 85.0; // Consumo maior
+    }
 }

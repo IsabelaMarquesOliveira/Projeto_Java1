@@ -23,4 +23,11 @@ public class Frigobar extends Geladeira {
     public void setTemFechadura(boolean temFechadura) {
         this.temFechadura = temFechadura;
     }
+
+    // 2 e 3. Sobrescrevendo o método com a regra do Frigobar (consome menos)
+    @Override
+    public double calcularConsumoEnergia() {
+        System.out.println("Calculando consumo reduzido do Frigobar compacto...");
+        return 20.0; // Consumo bem menor
+    }
 }

@@ -1,8 +1,12 @@
 package br.com.fiapride.main;
 
 import br.com.fiapride.model.Frigobar;
+import br.com.fiapride.model.Geladeira;
 import br.com.fiapride.model.GeladeiraInteligente;
 import br.com.fiapride.model.Sensor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SistemaPrincipal2 {
     public static void main(String[] args) {
@@ -10,26 +14,28 @@ public class SistemaPrincipal2 {
         Sensor sensorComum = new Sensor("Termostato Simples", true);
         Sensor sensorSmart = new Sensor("Sensor Digital Wi-Fi", true);
 
-        // Criando a primeira filha (Frigobar)
+        // Criando os três objetos diferentes
+        Geladeira geladeiraPadrao = new Geladeira("Electrolux", 400, sensorComum);
         Frigobar meuFrigobar = new Frigobar("Consul", 120, sensorComum, true);
-
-        // Criando a segunda filha (Geladeira Inteligente)
         GeladeiraInteligente minhaSmart = new GeladeiraInteligente("Samsung", 500, sensorSmart, true);
 
-        System.out.println("--- Testando os Herdeiros ---");
+        // 4. Criando a Lista tipada com a Superclasse (Geladeira)
+        List<Geladeira> listaDeEletrodomesticos = new ArrayList<>();
+        listaDeEletrodomesticos.add(geladeiraPadrao);
+        listaDeEletrodomesticos.add(meuFrigobar);
+        listaDeEletrodomesticos.add(minhaSmart);
 
-        // Repare que estamos usando o getMarca(), que foi herdado da Geladeira!
-        System.out.println("1. Frigobar da marca: " + meuFrigobar.getMarca());
-        System.out.println("   Tem fechadura? " + (meuFrigobar.isTemFechadura() ? "Sim" : "Não"));
+        System.out.println("--- Teste de Polimorfismo: Consumo de Energia ---");
 
-        System.out.println("\n2. Geladeira Smart da marca: " + minhaSmart.getMarca());
-        System.out.println("   Está conectada no Wi-Fi? " + (minhaSmart.isConexaoWiFi() ? "Sim" : "Não"));
+        // Laço for iterando sobre a lista
+        // A MÁGICA ACONTECE AQUI: A mesma linha de código executa lógicas diferentes!
+        for (Geladeira eletro : listaDeEletrodomesticos) {
+            System.out.println("\nEquipamento: " + eletro.getMarca());
 
-        // Provando a herança de métodos de ação da mãe
-        System.out.println("\n--- Testando métodos herdados na Smart ---");
-        minhaSmart.ajustarTemperatura(2);
-        System.out.println("Temperatura da Smart ajustada para: " + minhaSmart.getTemperaturaAtual() + "°C");
-        minhaSmart.adicionarItens(10);
+            // O Java sabe exatamente qual calcularConsumoEnergia() chamar
+            double consumo = eletro.calcularConsumoEnergia();
+
+            System.out.println("Consumo mensal estimado: " + consumo + " kWh");
+        }
     }
 }
-
