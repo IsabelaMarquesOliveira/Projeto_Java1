@@ -17,6 +17,7 @@ Clique nos links abaixo para ver os detalhes e conceitos aplicados em cada etapa
 * 🔌 **[Aula 05: Associação de Objetos](AULA_05.md)** (Conectando a classe Geladeira com a classe Sensor)
 * 🧬 **[Aula 06: Herança e Especialização](AULA_06.md)** (Superclasses, Extends e Super)
 * ⚡ **[Aula 07: Polimorfismo](AULA_07.md)** (Sobrescrita de métodos e execução dinâmica)
+* 👻 **[Aula 08: Classes e Métodos Abstratos](AULA_08.md)** (Moldes e Contratos)
 
 <img width="400" height="276" alt="{81D01129-BDDD-4FB3-B754-51EDDB6BB0CE}" src="https://github.com/user-attachments/assets/4827cdd7-9937-4b0f-99f1-6728b6c61470" />
 
