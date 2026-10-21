@@ -1,15 +1,13 @@
 package br.com.fiapride.model;
 
-public class Geladeira {
+public abstract class Geladeira {
     private String marca;
     private int temperaturaAtual;
     private int capacidadeAtual;
     private int capacidadeMaxima;
 
-    // Associação com a nova classe Sensor
     private Sensor sensorInterno;
 
-    // Construtor atualizado recebendo o Sensor
     public Geladeira(String marca, int capacidadeMaxima, Sensor sensorInterno) {
         this.setMarca(marca);
         this.setCapacidadeMaxima(capacidadeMaxima);
@@ -19,7 +17,6 @@ public class Geladeira {
         this.setCapacidadeAtual(0);
     }
 
-    // Métodos de Ação
     public void ajustarTemperatura(int novaTemperatura) {
         this.setTemperaturaAtual(novaTemperatura);
     }
@@ -35,7 +32,14 @@ public class Geladeira {
         }
     }
 
-    // Getters e Setters
+    public double calcularConsumoEnergia() {
+        System.out.println("Calculando consumo médio de uma Geladeira padrão...");
+        return 50.0;
+    }
+
+    // Método abstrato
+    public abstract void realizarDegelo();
+
     public String getMarca() {
         return marca;
     }
@@ -52,7 +56,7 @@ public class Geladeira {
         if (temperaturaAtual >= -5 && temperaturaAtual <= 10) {
             this.temperaturaAtual = temperaturaAtual;
         } else {
-            System.out.println("ERRO DE SEGURANÇA: Tentativa de burlar o sistema! Valor de temperatura inválido no SET.");
+            System.out.println("ERRO: Valor de temperatura inválido no SET.");
         }
     }
 
@@ -78,11 +82,5 @@ public class Geladeira {
 
     public void setSensorInterno(Sensor sensorInterno) {
         this.sensorInterno = sensorInterno;
-    }
-
-    // 1. Método genérico na Superclasse
-    public double calcularConsumoEnergia() {
-        System.out.println("Calculando consumo médio de uma Geladeira padrão...");
-        return 50.0; // Consumo base em kWh
     }
 }
